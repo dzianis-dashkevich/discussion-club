@@ -1,100 +1,26 @@
 ---
-# You can also start simply with 'default'
-theme: seriph
+# config: https://sli.dev/custom/
+# https://sli.dev/guide/theme-addon.html#use-theme
+theme: default
 # random image from a curated Unsplash collection by Anthony
 # like them? see https://unsplash.com/collections/94734566/slidev
-background: https://cover.sli.dev
+background: https://cdn.jsdelivr.net/gh/slidevjs/slidev-covers@main/static/gSnIwHBKw3c.webp
 # some information about your slides (markdown enabled)
-title: Welcome to Slidev
-info: |
-  ## Slidev Starter Template
-  Presentation slides for developers.
-
-  Learn more at [Sli.dev](https://sli.dev)
+title: Analysis of algorithms
 # apply unocss classes to the current slide
 class: text-center
 # https://sli.dev/features/drawing
 drawings:
   persist: false
 # slide transition: https://sli.dev/guide/animations.html#slide-transitions
-transition: slide-left
+transition: fade-out
 # enable MDC Syntax: https://sli.dev/features/mdc
 mdc: true
 ---
 
 # Analysis of algorithms
 
-Presentation slides for developers
-
-
-<div @click="$slidev.nav.next" class="mt-12 py-1" hover:bg="white op-10">
-  Press Space for next page <carbon:arrow-right />
-</div>
-
-<div class="abs-br m-6 text-xl">
-  <button @click="$slidev.nav.openInEditor" title="Open in Editor" class="slidev-icon-btn">
-    <carbon:edit />
-  </button>
-  <a href="https://github.com/slidevjs/slidev" target="_blank" class="slidev-icon-btn">
-    <carbon:logo-github />
-  </a>
-</div>
-
-<!--
-The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
--->
-
----
-transition: fade-out
----
-
-# What is Slidev?
-
-Slidev is a slides maker and presenter designed for developers, consist of the following features
-
-- 📝 **Text-based** - focus on the content with Markdown, and then style them later
-- 🎨 **Themable** - themes can be shared and re-used as npm packages
-- 🧑‍💻 **Developer Friendly** - code highlighting, live coding with autocompletion
-- 🤹 **Interactive** - embed Vue components to enhance your expressions
-- 🎥 **Recording** - built-in recording and camera view
-- 📤 **Portable** - export to PDF, PPTX, PNGs, or even a hostable SPA
-- 🛠 **Hackable** - virtually anything that's possible on a webpage is possible in Slidev
-<br>
-<br>
-
-Read more about [Why Slidev?](https://sli.dev/guide/why)
-
-<!--
-You can have `style` tag in markdown to override the style for the current page.
-Learn more: https://sli.dev/features/slide-scope-style
--->
-
-<style>
-h1 {
-  background-color: #2B90B6;
-  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
-}
-</style>
-
-<!--
-Here is another comment.
--->
-
----
-transition: slide-up
-level: 2
----
-
-# Navigation
-
-Hover on the bottom-left corner to see the navigation's controls panel, [learn more](https://sli.dev/guide/ui#navigation-bar)
-
-## Keyboard Shortcuts
+Navigation
 
 |                                                     |                             |
 | --------------------------------------------------- | --------------------------- |
@@ -103,535 +29,200 @@ Hover on the bottom-left corner to see the navigation's controls panel, [learn m
 | <kbd>up</kbd>                                       | previous slide              |
 | <kbd>down</kbd>                                     | next slide                  |
 
-<!-- https://sli.dev/guide/animations.html#click-animation -->
-<img
-  v-click
-  class="absolute -bottom-9 -left-7 w-80 opacity-50"
-  src="https://sli.dev/assets/arrow-bottom-left.svg"
-  alt=""
-/>
-<p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p>
+<div class="abs-br m-6 text-xl">
+  <a href="https://github.com/dzianis-dashkevich/discussion-club" target="_blank" class="slidev-icon-btn">
+    <carbon:logo-github />
+  </a>
+</div>
 
----
-layout: two-cols
-layoutClass: gap-16
 ---
 
 # Table of contents
 
 You can use the `Toc` component to generate a table of contents for your slides:
 
-```html
 <Toc minDepth="1" maxDepth="1" />
-```
-
-The title will be inferred from your slide content, or you can override it with `title` and `level` in your frontmatter.
-
-::right::
-
-<Toc text-sm minDepth="1" maxDepth="2" />
 
 ---
-layout: image-right
-image: https://cover.sli.dev
----
 
-# Code
+# Why Analyze an Algorithm?
 
-Use code snippets and get the highlighting directly, and even types hover!
-
-```ts {all|5|7|7-8|10|all} twoslash
-// TwoSlash enables TypeScript hover information
-// and errors in markdown code blocks
-// More at https://shiki.style/packages/twoslash
-
-import { computed, ref } from 'vue'
-
-const count = ref(0)
-const doubled = computed(() => count.value * 2)
-
-doubled.value = 2
-```
-
-<arrow v-click="[4, 5]" x1="350" y1="310" x2="195" y2="334" color="#953" width="2" arrowSize="1" />
-
-<!-- This allow you to embed external code blocks -->
-<<< @/snippets/external.ts#snippet
-
-<!-- Footer -->
-
-[Learn more](https://sli.dev/features/line-highlighting)
-
-<!-- Inline style -->
 <style>
-.footnotes-sep {
-  @apply mt-5 opacity-10;
-}
-.footnotes {
-  @apply text-sm opacity-75;
-}
-.footnote-backref {
-  display: none;
+p {
+    font-size: 1rem;
 }
 </style>
 
-<!--
-Notes can also sync with clicks
+<p v-click class="opacity-50">
 
-[click] This will be highlighted after the first click
+- Evaluate Efficiency
+  - Time Complexity: Determine how the execution time of the algorithm scales with the size of the input.
+  - Space Complexity: Determine how the memory usage of the algorithm scales with the size of the input.
+- Compare Algorithms
+  - Helps in comparing different algorithms for the same problem to choose the most suitable one based on performance criteria.
+  - Allows trade-offs between time and space (e.g., faster algorithms may use more memory).
+- Optimize Solutions
+  - Identifying bottlenecks or inefficiencies in an algorithm helps improve its design, making it faster or reducing its memory usage.
+  - Adjust implementation based on worst-case, average-case, and best-case scenarios for better performance.
+- Theoretical Validation
+  - Formal analysis validates the algorithm's correctness, ensuring it produces the desired output for all valid inputs.
 
-[click] Highlighted with `count = ref(0)`
-
-[click:3] Last click (skip two clicks)
--->
+</p>
 
 ---
-level: 2
+layout: image-right
+image: img/scientific-method.png
+backgroundSize: contain
 ---
 
-# Shiki Magic Move
+# Scientific Method
 
-Powered by [shiki-magic-move](https://shiki-magic-move.netlify.app/), Slidev supports animations across multiple code snippets.
+- Observer running time of the program on a give computer.
+- Develop hypothesis that's consistent with the observations.
+- Predict a running time for larger input size.
+- Verify the predictions by making more observations.
+- Validate until we're comfortable that our model hypothesis and observations all agree. (loop)
 
-Add multiple code blocks and wrap them with <code>````md magic-move</code> (four backticks) to enable the magic move. For example:
+---
 
-````md magic-move {lines: true}
-```ts {*|2|*}
-// step 1
-const author = reactive({
-  name: 'John Doe',
-  books: [
-    'Vue 2 - Advanced Guide',
-    'Vue 3 - Basic Guide',
-    'Vue 4 - The Mystery'
-  ]
-})
-```
+### Let's consider the following algorithm
 
-```ts {*|1-2|3-4|3-4,8}
-// step 2
-export default {
-  data() {
-    return {
-      author: {
-        name: 'John Doe',
-        books: [
-          'Vue 2 - Advanced Guide',
-          'Vue 3 - Basic Guide',
-          'Vue 4 - The Mystery'
-        ]
-      }
+```ts {all|2|3|4|6|7|8|9|10|16|all}{lines:true} twoslash
+// How many triples sum to zero? Brute-force solution.
+function threeSum(arr: Array<number>): number {
+    const n = arr.length;
+    let count = 0;
+
+    for (let i = 0; i < n - 2; i++) {
+        for (let j = i + 1; j < n - 1; j++) {
+            for (let k = j + 1; k < n; k++) {
+                if (arr[i] + arr[j] + arr[k] === 0) {
+                    count++;
+                }
+            }
+        }
     }
-  }
+
+    return count;
 }
 ```
 
-```ts
-// step 3
-export default {
-  data: () => ({
-    author: {
-      name: 'John Doe',
-      books: [
-        'Vue 2 - Advanced Guide',
-        'Vue 3 - Basic Guide',
-        'Vue 4 - The Mystery'
-      ]
-    }
-  })
-}
-```
-
-Non-code blocks are ignored.
-
-```vue
-<!-- step 4 -->
-<script setup>
-const author = {
-  name: 'John Doe',
-  books: [
-    'Vue 2 - Advanced Guide',
-    'Vue 3 - Basic Guide',
-    'Vue 4 - The Mystery'
-  ]
-}
-</script>
-```
-````
-
 ---
 
-# Components
+### Measure Time (Observe)
 
-<div grid="~ cols-2 gap-4">
-<div>
-
-You can use Vue components directly inside your slides.
-
-We have provided a few built-in components like `<Tweet/>` and `<Youtube/>` that you can use directly. And adding your custom components is also super easy.
-
-```html
-<Counter :count="10" />
-```
-
-<!-- ./components/Counter.vue -->
-<Counter :count="10" m="t-4" />
-
-Check out [the guides](https://sli.dev/builtin/components.html) for more.
-
-</div>
-<div>
-
-```html
-<Tweet id="1390115482657726468" />
-```
-
-<Tweet id="1390115482657726468" scale="0.65" />
-
-</div>
-</div>
-
-<!--
-Presenter note with **bold**, *italic*, and ~~striked~~ text.
-
-Also, HTML elements are valid:
-<div class="flex w-full">
-  <span style="flex-grow: 1;">Left content</span>
-  <span>Right content</span>
-</div>
--->
-
----
-class: px-20
----
-
-# Themes
-
-Slidev comes with powerful theming support. Themes can provide styles, layouts, components, or even configurations for tools. Switching between themes by just **one edit** in your frontmatter:
-
-<div grid="~ cols-2 gap-2" m="t-2">
-
-```yaml
----
-theme: default
----
-```
-
-```yaml
----
-theme: seriph
----
-```
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-default/01.png?raw=true" alt="">
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-seriph/01.png?raw=true" alt="">
-
-</div>
-
-Read more about [How to use a theme](https://sli.dev/guide/theme-addon#use-theme) and
-check out the [Awesome Themes Gallery](https://sli.dev/resources/theme-gallery).
-
----
-
-# Clicks Animations
-
-You can add `v-click` to elements to add a click animation.
-
-<div v-click>
-
-This shows up when you click the slide:
-
-```html
-<div v-click>This shows up when you click the slide.</div>
-```
-
-</div>
-
-<br>
-
-<v-click>
-
-The <span v-mark.red="3"><code>v-mark</code> directive</span>
-also allows you to add
-<span v-mark.circle.orange="4">inline marks</span>
-, powered by [Rough Notation](https://roughnotation.com/):
-
-```html
-<span v-mark.underline.orange>inline markers</span>
-```
-
-</v-click>
-
-<div mt-20 v-click>
-
-[Learn more](https://sli.dev/guide/animations#click-animation)
-
-</div>
-
----
-
-# Motions
-
-Motion animations are powered by [@vueuse/motion](https://motion.vueuse.org/), triggered by `v-motion` directive.
-
-```html
-<div
-  v-motion
-  :initial="{ x: -80 }"
-  :enter="{ x: 0 }"
-  :click-3="{ x: 80 }"
-  :leave="{ x: 1000 }"
->
-  Slidev
-</div>
-```
-
-<div class="w-60 relative">
-  <div class="relative w-40 h-40">
-    <img
-      v-motion
-      :initial="{ x: 800, y: -100, scale: 1.5, rotate: -50 }"
-      :enter="final"
-      class="absolute inset-0"
-      src="https://sli.dev/logo-square.png"
-      alt=""
-    />
-    <img
-      v-motion
-      :initial="{ y: 500, x: -100, scale: 2 }"
-      :enter="final"
-      class="absolute inset-0"
-      src="https://sli.dev/logo-circle.png"
-      alt=""
-    />
-    <img
-      v-motion
-      :initial="{ x: 600, y: 400, scale: 2, rotate: 100 }"
-      :enter="final"
-      class="absolute inset-0"
-      src="https://sli.dev/logo-triangle.png"
-      alt=""
-    />
-  </div>
-
-  <div
-    class="text-5xl absolute top-14 left-40 text-[#2B90B6] -z-1"
-    v-motion
-    :initial="{ x: -80, opacity: 0}"
-    :enter="{ x: 0, opacity: 1, transition: { delay: 2000, duration: 1000 } }">
-    Slidev
-  </div>
-</div>
-
-<!-- vue script setup scripts can be directly used in markdown, and will only affects current page -->
-<script setup lang="ts">
-const final = {
-  x: 0,
-  y: 0,
-  rotate: 0,
-  scale: 1,
-  transition: {
-    type: 'spring',
-    damping: 10,
-    stiffness: 20,
-    mass: 2
-  }
-}
-</script>
-
-<div
-  v-motion
-  :initial="{ x:35, y: 30, opacity: 0}"
-  :enter="{ y: 0, opacity: 1, transition: { delay: 3500 } }">
-
-[Learn more](https://sli.dev/guide/animations.html#motion)
-
-</div>
-
----
-
-# LaTeX
-
-LaTeX is supported out-of-box. Powered by [KaTeX](https://katex.org/).
-
-<div h-3 />
-
-Inline $\sqrt{3x-1}+(1+x)^2$
-
-Block
-$$ {1|3|all}
-\begin{aligned}
-\nabla \cdot \vec{E} &= \frac{\rho}{\varepsilon_0} \\
-\nabla \cdot \vec{B} &= 0 \\
-\nabla \times \vec{E} &= -\frac{\partial\vec{B}}{\partial t} \\
-\nabla \times \vec{B} &= \mu_0\vec{J} + \mu_0\varepsilon_0\frac{\partial\vec{E}}{\partial t}
-\end{aligned}
-$$
-
-[Learn more](https://sli.dev/features/latex)
-
----
-
-# Diagrams
-
-You can create diagrams / graphs from textual descriptions, directly in your Markdown.
-
-<div class="grid grid-cols-4 gap-5 pt-4 -mb-6">
-
-```mermaid {scale: 0.5, alt: 'A simple sequence diagram'}
-sequenceDiagram
-    Alice->John: Hello John, how are you?
-    Note over Alice,John: A typical interaction
-```
-
-```mermaid {theme: 'neutral', scale: 0.8}
-graph TD
-B[Text] --> C{Decision}
-C -->|One| D[Result 1]
-C -->|Two| E[Result 2]
-```
-
-```mermaid
-mindmap
-  root((mindmap))
-    Origins
-      Long history
-      ::icon(fa fa-book)
-      Popularisation
-        British popular psychology author Tony Buzan
-    Research
-      On effectiveness<br/>and features
-      On Automatic creation
-        Uses
-            Creative techniques
-            Strategic planning
-            Argument mapping
-    Tools
-      Pen and paper
-      Mermaid
-```
-
-```plantuml {scale: 0.7}
-@startuml
-
-package "Some Group" {
-  HTTP - [First Component]
-  [Another Component]
+```ts {all|1-6|8-12|14-16|18-23|all}{lines:true}
+function measureTime(arr: Array<number>): void {
+    const start = performance.now();
+    threeSum(arr);
+    const end = performance.now();
+    console.log(`Execution time for ${arr.length}: ${end - start} ms`);
 }
 
-node "Other Groups" {
-  FTP - [Second Component]
-  [First Component] --> FTP
+function getRandomInt(min, max) {
+    const minCeiled = Math.ceil(min);
+    const maxFloored = Math.floor(max);
+    return Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled);
 }
 
-cloud {
-  [Example 1]
+function generateSample(size: number): Array<number> {
+    return Array.from({ length: size }, () => getRandomInt(-100, 100));
 }
 
-database "MySql" {
-  folder "This is my folder" {
-    [Folder 3]
-  }
-  frame "Foo" {
-    [Frame 4]
-  }
+measureTime(generateSample(128));
+measureTime(generateSample(256));
+measureTime(generateSample(512));
+measureTime(generateSample(1024));
+measureTime(generateSample(2048));
+measureTime(generateSample(4096));
+
+```
+
+---
+layout: image-right
+image: img/plot.png
+backgroundSize: contain
+---
+
+### Plot observed data
+
+```shell
+Execution time for 128: 1.4862080000000013 ms
+Execution time for 256: 2.153834 ms
+Execution time for 512: 15.630875 ms
+Execution time for 1024: 109.55587499999999 ms
+Execution time for 2048: 848.7782080000001 ms
+Execution time for 4096: 5712.405833 ms
+```
+
+---
+layout: image-right
+image: img/log-log-plot.png
+backgroundSize: contain
+---
+
+### log-log plot
+
+<style>
+p {
+    font-size: 0.6rem;
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
 }
+</style>
 
-[Another Component] --> [Example 1]
-[Example 1] --> [Folder 3]
-[Folder 3] --> [Frame 4]
+Line formula:
 
-@enduml
-```
+$\text{Y} = mX + c$
 
-</div>
+where `m` is slope and `c` is y-intercept.
 
-Learn more: [Mermaid Diagrams](https://sli.dev/features/mermaid) and [PlantUML Diagrams](https://sli.dev/features/plantuml)
+Calculate the slope (from the plot):
 
----
-foo: bar
-dragPos:
-  square: 691,32,167,_,-16
----
+$\text{slope} = \frac{\Delta \log(x)}{\Delta \log(y)} = \frac{12.3 - 4}{12-9} = \frac{8.3}{3} \approx 3$
 
-# Draggable Elements
+Calculate the y-intercept (from the plot):
 
-Double-click on the draggable elements to edit their positions.
+$\text{y-intercept} = Y - mX = 4 - 3 * 9 = 4 - 27 = -23$
 
-<br>
+Apply log-log transformation to the algorithm:
 
-###### Directive Usage
+$log_2{T(N)} = 3 \cdot log_2{N} + (-23)$
 
-```md
-<img v-drag="'square'" src="https://sli.dev/logo.png">
-```
+Rewrite in exponent form and transform to the power law form:
 
-<br>
+$T(N) = 2^{3 \cdot log_2{N} + (-23)} = 2^{(-23)} \cdot 2^{3 \cdot log_2{N}} = 2^{-23} \cdot N^{3}$
 
-###### Component Usage
-
-```md
-<v-drag text-3xl>
-  <div class="i-carbon:arrow-up" />
-  Use the `v-drag` component to have a draggable container!
-</v-drag>
-```
-
-<v-drag pos="663,206,261,_,-15">
-  <div text-center text-3xl border border-main rounded>
-    Double-click me!
-  </div>
-</v-drag>
-
-<img v-drag="'square'" src="https://sli.dev/logo.png">
-
-###### Draggable Arrow
-
-```md
-<v-drag-arrow two-way />
-```
-
-<v-drag-arrow pos="67,452,253,46" two-way op70 />
-
----
-src: ./pages/imported-slides.md
-hide: false
----
+So, our hypothesis is that our running time is about $2^{-23} \cdot N^{3} \approx 1 \cdot 10^-7 \cdot N^3$
 
 ---
 
-# Monaco Editor
+### Prediction and verification
 
-Slidev provides built-in Monaco Editor support.
+Based on our hypothesis, we can predict that the running time for $N = 8192$ will be ~ 54976 ms.
 
-Add `{monaco}` to the code block to turn it into an editor:
-
-```ts {monaco}
-import { ref } from 'vue'
-import { emptyArray } from './external'
-
-const arr = ref(emptyArray(10))
-```
-
-Use `{monaco-run}` to create an editor that can execute the code directly in the slide:
-
-```ts {monaco-run}
-import { version } from 'vue'
-import { emptyArray, sayHello } from './external'
-
-sayHello()
-console.log(`vue ${version}`)
-console.log(emptyArray<number>(10).reduce(fib => [...fib, fib.at(-1)! + fib.at(-2)!], [1, 1]))
+```shell
+Execution time for 8192: 55273.832416 ms
 ```
 
 ---
-layout: center
-class: text-center
----
 
-# Learn More
+### Power Law Dependencies
 
-[Documentation](https://sli.dev) · [GitHub](https://github.com/slidevjs/slidev) · [Showcases](https://sli.dev/resources/showcases)
+Power Law:
 
-<PoweredBySlidev mt-10 />
+$T(N) = a \cdot N^b$
+
+System independent effects (determines exponent `b`)
+- Algorithm itself
+- Input data
+
+System dependent effects (determines constant `a`)
+- Hardware: CPU, memory, cache, etc...
+- Software: compiler, interpreter, etc...
+- System: OS, other running programs, etc...
+
+
+
+
+
