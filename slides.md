@@ -71,7 +71,7 @@ p {
 
 ---
 layout: image-right
-image: img/scientific-method.png
+image: /img/scientific-method.png
 backgroundSize: contain
 ---
 
@@ -140,7 +140,7 @@ measureTime(generateSample(4096));
 
 ---
 layout: image-right
-image: img/plot.png
+image: /img/plot.png
 backgroundSize: contain
 ---
 
@@ -157,7 +157,7 @@ Execution time for 4096: 5712.405833 ms
 
 ---
 layout: image-right
-image: img/log-log-plot.png
+image: /img/log-log-plot.png
 backgroundSize: contain
 ---
 
@@ -380,7 +380,7 @@ $\displaystyle{\lim_{x \to \infty}} \frac{4n^2 + 5n + 5}{4n^2} = \frac{4n^2}{4n^
 
 ---
 layout: image-right
-image: img/order-of-growth-classification.png
+image: /img/order-of-growth-classification.png
 backgroundSize: contain
 ---
 
@@ -395,7 +395,7 @@ When we say the running time of the algorithm is proportional (for example) to N
 
 ---
 layout: image-right
-image: img/common-order-of-growth-classifications.png
+image: /img/common-order-of-growth-classifications.png
 backgroundSize: contain
 ---
 
@@ -542,7 +542,7 @@ And indeed we can solve this algorithm faster, by using a hash table to store th
 
 ---
 layout: image-right
-image: img/amortized.png
+image: /img/amortized.png
 backgroundSize: contain
 ---
 
