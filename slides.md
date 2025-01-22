@@ -39,8 +39,6 @@ Navigation
 
 # Table of contents
 
-You can use the `Toc` component to generate a table of contents for your slides:
-
 <Toc minDepth="1" maxDepth="1" />
 
 ---
