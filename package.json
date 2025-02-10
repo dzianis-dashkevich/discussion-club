@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "build": "npm run build:01 && npm run build:02",
-    "build:01": "slidev build 01.md -o dist/01",
-    "build:02": "slidev build 02.md -o dist/02",
+    "build:01": "slidev build 01.md -o dist/01 --base /01/",
+    "build:02": "slidev build 02.md -o dist/02 --base /02/",
     "dev:01": "slidev 01.md --open",
     "dev:02": "slidev 02.md --open"
   },
