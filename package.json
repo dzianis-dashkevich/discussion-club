@@ -9,7 +9,8 @@
     "build:03": "slidev build 03.md -o dist/03 --base /discussion-club/03/",
     "dev:01": "slidev 01.md --open",
     "dev:02": "slidev 02.md --open",
-    "dev:03": "slidev 03.md --open"
+    "dev:03": "slidev 03.md --open",
+    "dev:04": "slidev 04.md --open"
   },
   "dependencies": {
     "@slidev/cli": "^51.0.2",
