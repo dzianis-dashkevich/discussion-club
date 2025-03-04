@@ -3,7 +3,7 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "npm run build:01 && npm run build:02 && npm run build:03",
+    "build": "npm run build:01 && npm run build:02 && npm run build:03 && npm run build:04",
     "build:01": "slidev build 01.md -o dist/01 --base /discussion-club/01/",
     "build:02": "slidev build 02.md -o dist/02 --base /discussion-club/02/",
     "build:03": "slidev build 03.md -o dist/03 --base /discussion-club/03/",
