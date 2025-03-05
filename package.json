@@ -3,20 +3,25 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "npm run build:01 && npm run build:02 && npm run build:03 && npm run build:04",
+    "build": "npm-run-all build:*",
     "build:01": "slidev build 01.md -o dist/01 --base /discussion-club/01/",
     "build:02": "slidev build 02.md -o dist/02 --base /discussion-club/02/",
     "build:03": "slidev build 03.md -o dist/03 --base /discussion-club/03/",
     "build:04": "slidev build 04.md -o dist/04 --base /discussion-club/04/",
+    "build:05": "slidev build 04.md -o dist/05 --base /discussion-club/05/",
     "dev:01": "slidev 01.md --open",
     "dev:02": "slidev 02.md --open",
     "dev:03": "slidev 03.md --open",
-    "dev:04": "slidev 04.md --open"
+    "dev:04": "slidev 04.md --open",
+    "dev:05": "slidev 05.md --open"
   },
   "dependencies": {
     "@slidev/cli": "^51.0.2",
     "@slidev/theme-default": "latest",
     "@slidev/theme-seriph": "latest",
     "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
   }
 }
