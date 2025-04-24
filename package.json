@@ -12,6 +12,7 @@
     "build:06": "slidev build 06.md -o dist/06 --base /discussion-club/06/",
     "build:07": "slidev build 07.md -o dist/07 --base /discussion-club/07/",
     "build:08": "slidev build 08.md -o dist/08 --base /discussion-club/08/",
+    "build:09": "slidev build 09.md -o dist/09 --base /discussion-club/09/",
     "dev:01": "slidev 01.md --open",
     "dev:02": "slidev 02.md --open",
     "dev:03": "slidev 03.md --open",
@@ -19,7 +20,8 @@
     "dev:05": "slidev 05.md --open",
     "dev:06": "slidev 06.md --open",
     "dev:07": "slidev 07.md --open",
-    "dev:08": "slidev 08.md --open"
+    "dev:08": "slidev 08.md --open",
+    "dev:09": "slidev 09.md --open"
   },
   "dependencies": {
     "@slidev/cli": "^51.0.2",
